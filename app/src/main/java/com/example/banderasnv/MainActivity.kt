@@ -60,5 +60,6 @@ fun BanderaMexico(modifier: Modifier = Modifier){
             fillMaxHeight().
             background(Color.Red)
         )
+
     }
 }
