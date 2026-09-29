@@ -19,8 +19,8 @@ fun BanderaScreen(modifier: Modifier = Modifier) {
     ConstraintLayout(modifier = Modifier.fillMaxSize()) {
         val (negro, rojo, amarillo) = createRefs()
 
-        val linea1 = createGuidelineFromStart(0.333f)
-        val linea2 = createGuidelineFromStart(0.666f)
+        val linea1 = createGuidelineFromTop(0.333f)
+        val linea2 = createGuidelineFromTop(0.666f)
 
         Box(
             modifier = Modifier
@@ -29,7 +29,7 @@ fun BanderaScreen(modifier: Modifier = Modifier) {
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
                     top.linkTo(parent.top)
-                    bottom.linkTo(parent.bottom)
+                    bottom.linkTo(linea1)
                     height = Dimension.fillToConstraints
                     width = Dimension.fillToConstraints
                 }
@@ -41,6 +41,23 @@ fun BanderaScreen(modifier: Modifier = Modifier) {
                 .constrainAs(rojo) {
                     start.linkTo(parent.start)
                     end.linkTo(parent.end)
+                    top.linkTo(linea1)
+                    bottom.linkTo(linea2)
+                    height = Dimension.fillToConstraints
+                    width = Dimension.fillToConstraints
+                }
+        )
+
+        Box(
+            modifier = Modifier
+                .background(Color.Yellow)
+                .constrainAs(amarillo) {
+                    start.linkTo(parent.start)
+                    end.linkTo(parent.end)
+                    top.linkTo(linea2)
+                    bottom.linkTo(parent.bottom)
+                    height = Dimension.fillToConstraints
+                    width = Dimension.fillToConstraints
                 }
         )
 
