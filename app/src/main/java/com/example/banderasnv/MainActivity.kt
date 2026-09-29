@@ -1,5 +1,6 @@
 package com.example.banderasnv
 
+import Screen.BanderaScreen
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -20,6 +21,9 @@ class MainActivity : ComponentActivity() {
         setContent {
             BanderasnvTheme {
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
+                    BanderaScreen(
+
+                    )
                     Greeting(
                         name = "Android",
                         modifier = Modifier.padding(innerPadding)
